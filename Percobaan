@@ -137,3 +137,30 @@ void insert_karyawan(struct Karyawan *root, char *nama){
 	return root;
 }
 
+struct AntrianPengiriman {
+	char resi[20];
+	char alamat[50];
+	struct AntrianPengiriman *next;
+};
+
+struct AntrianPengiriman *front = NULL;
+struct AntrianPengiriman *rear = NULL;
+
+void PenambahanAntrian(char *resi, char *tujuan){
+	struct AntrianPengiriman *newNode = (struct AntrianPengiriman*)malloc(sizeof(struct AntrianPengiriman));
+	strcpy(newNode->resi, resi);
+	strpy(newNode->tujuan, tujuan);
+	newNode->next = NULL;
+	
+	if(front == NULL && rear == NULL) {
+		front = rear = newNode;
+		return;
+	}
+	
+	rear->next = newNode;
+	rear = newNode;
+	printf("Paket %S telah masuk ke antrian pengiriman. \n", resi, tujuan);
+	}
+
+
+
