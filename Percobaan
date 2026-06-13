@@ -136,4 +136,3 @@ void insert_karyawan(struct Karyawan *root, char *nama){
 	
 	return root;
 }
-
